@@ -10,25 +10,29 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         Book[] books = new Book[20];
 
-
-        String userName;
+        System.out.println("Please enter your name: ");
+        String userName = scanner.nextLine();
 
         for (int i = 0; i < 20; i++) {
-            int Id = (int)(Math.random()) * 10000;
+            int Id = i + 1;
 
-            books[i].setBookId(Id);
-            books[i].setBookIsbn("");
-            books[i].setBookTitle("");
-            books[i].setCheckedOut(false);
-            books[i].setCheckedOutTo("");
+            Book book = new Book(Id, "", "", false, "");
+            books[i] = book;
 
+            System.out.println(book.getBookId());
         }
+
+        for (Book book : books) {
+            System.out.println(book.getBookId());
+        }
+
+
 
     }
 
     public static void checkOut(String name) {
-        //setcheckedOutTo = name;
-        //isCheckedOut = true;
+        //book.setcheckedOutTo = name;
+        //book.isCheckedOut = true;
 
     }
 
